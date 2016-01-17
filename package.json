@@ -5,8 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "compile": "gulp build",
-    "test": "npm run compile && nyc ava",
-    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "test": "npm run compile && nyc ava"
   },
   "repository": "dustinspecker/is-proto-prop",
   "keywords": [
