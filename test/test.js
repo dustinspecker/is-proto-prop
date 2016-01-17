@@ -1,35 +1,34 @@
-/* global describe, it */
 'use strict'
-import {expect} from 'chai'
 import isProtoProp from '../lib/'
+import test from 'ava'
 
-describe('is-proto-prop', () => {
-  it('should throw error when type or property is not a string', () => {
-    const typeTest = () => isProtoProp(1, 'prop')
+test('should throw error when type or property is not a string', t => {
+  const typeTest = () => isProtoProp(1, 'prop')
 
-    const propTest = () => isProtoProp('type', 1)
+  const propTest = () => isProtoProp('type', 1)
 
-    expect(typeTest).to.throw(TypeError, /Expected a string/)
-    expect(propTest).to.throw(TypeError, /Expected a string/)
-  })
+  t.throws(typeTest, TypeError)
+  t.throws(propTest, TypeError)
+  // expect(typeTest).to.throw(TypeError, /Expected a string/)
+  // expect(propTest).to.throw(TypeError, /Expected a string/)
+})
 
-  it('should return false if not a js type', () => {
-    expect(isProtoProp('dog', 'bark')).to.eql(false)
-    expect(isProtoProp('gulp', 'task')).to.eql(false)
-  })
+test('should return false if not a js type', t => {
+  t.notOk(isProtoProp('dog', 'bark'))
+  t.notOk(isProtoProp('gulp', 'task'))
+})
 
-  it('should return false if property is not on prototype', () => {
-    expect(isProtoProp('Array', 'count')).to.eql(false)
-    expect(isProtoProp('Error', 'ignore')).to.eql(false)
-  })
+test('should return false if property is not on prototype', t => {
+  t.notOk(isProtoProp('Array', 'count'))
+  t.notOk(isProtoProp('Error', 'ignore'))
+})
 
-  it('shoud return true if property is on prototype', () => {
-    expect(isProtoProp('Array', 'length')).to.eql(true)
-    expect(isProtoProp('Object', 'toString')).to.eql(true)
-  })
+test('shoud return true if property is on prototype', t => {
+  t.ok(isProtoProp('Array', 'length'))
+  t.ok(isProtoProp('Object', 'toString'))
+})
 
-  it('should be case insensitive for types', () => {
-    expect(isProtoProp('array', 'length')).to.eql(true)
-    expect(isProtoProp('ARRAY', 'length')).to.eql(true)
-  })
+test('should be case insensitive for types', t => {
+  t.ok(isProtoProp('array', 'length'))
+  t.ok(isProtoProp('ARRAY', 'length'))
 })
