@@ -10,7 +10,7 @@ const lowerProtoProps = lowercaseKeys(protoProps)
  * @param {String} property - name of property
  * @return {Boolean} - type has property on its prototype
  */
-module.exports = function (type, property) {
+module.exports = (type, property) => {
   let lowerType
 
   if (typeof type !== 'string' || typeof property !== 'string') {
