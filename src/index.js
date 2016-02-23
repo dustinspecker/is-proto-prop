@@ -11,13 +11,11 @@ const lowerProtoProps = lowercaseKeys(protoProps)
  * @return {Boolean} - type has property on its prototype
  */
 module.exports = (type, property) => {
-  let lowerType
-
   if (typeof type !== 'string' || typeof property !== 'string') {
     throw new TypeError('Expected a string')
   }
 
-  lowerType = type.toLowerCase()
+  const lowerType = type.toLowerCase()
 
   return !!lowerProtoProps[lowerType] && lowerProtoProps[lowerType].indexOf(property) > -1
 }
