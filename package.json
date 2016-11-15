@@ -41,7 +41,7 @@
     "gulp-babel": "^6.0.0",
     "gulp-eslint": "^2.0.0",
     "gulp-if": "^2.0.0",
-    "nyc": "^6.0.0"
+    "nyc": "^9.0.1"
   },
   "ava": {
     "require": [
