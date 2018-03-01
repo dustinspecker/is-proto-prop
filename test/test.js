@@ -9,8 +9,6 @@ test('should throw error when type or property is not a string', t => {
 
   t.throws(typeTest, TypeError)
   t.throws(propTest, TypeError)
-  // expect(typeTest).to.throw(TypeError, /Expected a string/)
-  // expect(propTest).to.throw(TypeError, /Expected a string/)
 })
 
 test('should return false if not a js type', t => {
