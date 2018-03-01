@@ -24,6 +24,7 @@ test('should return false if property is not on prototype', t => {
 test('shoud return true if property is on prototype', t => {
   t.truthy(isProtoProp('Array', 'length'))
   t.truthy(isProtoProp('Object', 'toString'))
+  t.truthy(isProtoProp('String', 'padEnd'))
 })
 
 test('should be case insensitive for types', t => {
