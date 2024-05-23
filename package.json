@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
-    "test": "gulp lint && nyc ava"
+    "lint": "eslint .",
+    "test": "npm run lint && nyc ava"
   },
   "repository": "dustinspecker/is-proto-prop",
   "keywords": [
@@ -27,14 +28,11 @@
   "devDependencies": {
     "ava": "^0.14.0",
     "coveralls": "^2.11.2",
-    "del": "^2.0.0",
+    "eslint": "^2.13.1",
     "eslint-config-dustinspecker": "^1.1.0",
     "eslint-plugin-new-with-error": "^1.1.0",
     "eslint-plugin-no-use-extend-native": "^0.3.1",
     "eslint-plugin-xo": "^0.4.0",
-    "gulp": "^3.9.0",
-    "gulp-eslint": "^2.0.0",
-    "gulp-if": "^2.0.0",
     "nyc": "^6.0.0"
   }
 }
