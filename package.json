@@ -22,10 +22,11 @@
   "engines": {
     "node": ">=18.0.0"
   },
+  "type": "module",
   "license": "MIT",
   "dependencies": {
     "lowercase-keys": "^1.0.0",
-    "proto-props": "^2.0.0"
+    "prototype-properties": "^5.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.3.0",

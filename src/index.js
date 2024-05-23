@@ -1,6 +1,5 @@
-'use strict'
-const lowercaseKeys = require('lowercase-keys')
-const protoProps = require('proto-props')
+import lowercaseKeys from 'lowercase-keys'
+import protoProps from 'prototype-properties'
 
 const lowerProtoProps = lowercaseKeys(protoProps)
 
@@ -10,7 +9,7 @@ const lowerProtoProps = lowercaseKeys(protoProps)
  * @param {String} property - name of property
  * @return {Boolean} - type has property on its prototype
  */
-module.exports = (type, property) => {
+export default (type, property) => {
   if (typeof type !== 'string' || typeof property !== 'string') {
     throw new TypeError('Expected a string')
   }

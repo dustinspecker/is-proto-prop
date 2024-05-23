@@ -28,21 +28,6 @@ isProtoProp('gulp', 'task');
 // => false
 ```
 
-### ES5
-```javascript
-var isProtoProp = require('is-proto-prop');
-
-isProtoProp('array', 'length');
-// => true
-
-isProtoProp('Error', 'ignore');
-// => false
-
-// `is-proto-props` can only verify native JS types
-isProtoProp('gulp', 'task');
-// => false
-```
-
 ## API
 ### isProtoProp(type, propertyName)
 Returns a `Boolean` if `propertyName` is on `type`'s prototype.

@@ -1,6 +1,6 @@
 'use strict'
-const isProtoProp = require('../src/')
-const test = require('ava')
+import isProtoProp from '../src/index.js'
+import test from 'ava'
 
 test('should throw error when type or property is not a string', t => {
   const typeTest = () => isProtoProp(1, 'prop')
