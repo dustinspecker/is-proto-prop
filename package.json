@@ -22,6 +22,9 @@
   "engines": {
     "node": ">=18.0.0"
   },
+  "files": [
+    "src"
+  ],
   "type": "module",
   "license": "MIT",
   "dependencies": {
