@@ -1,6 +1,6 @@
 'use strict'
-import lowercaseKeys from 'lowercase-keys'
-import protoProps from 'proto-props'
+const lowercaseKeys = require('lowercase-keys')
+const protoProps = require('proto-props')
 
 const lowerProtoProps = lowercaseKeys(protoProps)
 

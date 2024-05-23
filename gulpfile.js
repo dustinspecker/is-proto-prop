@@ -1,11 +1,10 @@
 'use strict'
-import babel from 'gulp-babel'
-import del from 'del'
-import gulp from 'gulp'
-import gulpIf from 'gulp-if'
-import eslint from 'gulp-eslint'
+const del = require('del')
+const gulp = require('gulp')
+const gulpIf = require('gulp-if')
+const eslint = require('gulp-eslint')
 
-const configFiles = './gulpfile.babel.js'
+const configFiles = './gulpfile.js'
   , srcFiles = 'src/*.js'
   , testFiles = 'test/*.js'
 
@@ -23,7 +22,6 @@ gulp.task('lint', () =>
 
 gulp.task('compile', ['clean', 'lint'], () =>
   gulp.src(srcFiles)
-    .pipe(babel())
     .pipe(gulp.dest(destDir))
 )
 
