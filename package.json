@@ -1,6 +1,6 @@
 {
   "name": "is-proto-prop",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Does a JS type's prototype have a property",
   "main": "src/index.js",
   "scripts": {
