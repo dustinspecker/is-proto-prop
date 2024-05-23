@@ -7,8 +7,8 @@ test('should throw error when type or property is not a string', t => {
 
   const propTest = () => isProtoProp('type', 1)
 
-  t.throws(typeTest, TypeError)
-  t.throws(propTest, TypeError)
+  t.throws(typeTest, {instanceOf: TypeError})
+  t.throws(propTest, {instanceOf: TypeError})
 })
 
 test('should return false if not a js type', t => {
