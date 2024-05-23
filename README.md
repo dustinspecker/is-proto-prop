@@ -5,8 +5,6 @@
 
 > Does a JS type's prototype have a property
 
-**Uses [Sindre Sorhus](https://github.com/sindresorhus)' [proto-props](https://www.npmjs.com/package/proto-props)**
-
 ## Install
 ```
 npm install --save is-proto-prop
