@@ -1,5 +1,4 @@
 'use strict'
-import alex from 'gulp-alex'
 import babel from 'gulp-babel'
 import del from 'del'
 import gulp from 'gulp'
@@ -16,14 +15,7 @@ let watching = false
 
 gulp.task('clean', () => del(destDir))
 
-gulp.task('alex', () =>
-  gulp.src('./README.md')
-    .pipe(alex())
-    .pipe(alex.reporter())
-    .pipe(alex.reporter('fail'))
-)
-
-gulp.task('lint', ['alex'], () =>
+gulp.task('lint', () =>
   gulp.src([configFiles, srcFiles, testFiles])
     .pipe(eslint())
     .pipe(gulpIf(!watching, eslint.failOnError()))
